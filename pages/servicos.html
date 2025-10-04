@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Serviços — Pablo Santana</title>
+  <link rel="stylesheet" href="services.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    /* Ajustes específicos para a galeria de serviços */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 20px;
+      margin-bottom: 45px;
+    }
+
+    .service-card {
+      background: rgba(0,0,0,0.4);
+      border-radius: 16px;
+      padding: 20px;
+      color: white;
+      text-align: left;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+      transition: transform 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card h2 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-buttons {
+      margin-top: 12px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-small {
+      flex: 1;
+      text-align: center;
+      padding: 10px 14px;
+      font-size: 14px;
+      border-radius: 10px;
+      background: #000;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: all 0.2s ease;
+    }
+
+    .btn-small:hover {
+      background: #0a5dc9;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    /* Oculta detalhes por padrão */
+    .service-details {
+      display: none;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.4;
+      color: #ddd;
+    }
+
+    .service-details.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="page-transition"></div>
+    <main class="page">
+    <section class="card">
+      <h1 class="name">Serviços</h1>
+      <p class="tagline">Escolha o serviço que deseja e saiba mais 🚀</p>
+
+      <div class="services-grid">
+        <!-- Serviço 1 -->
+        <div class="service-card">
+          <h2><i class="bi bi-camera-video"></i> Edição de video</h2>
+          <p>Criação ilustrativa de suas ideias em formato de video.</p>
+          <div class="service-buttons">
+            <button class="btn-small" onclick="toggleDetails(this)">Detalhes</button>
+            <a class="btn-small" href="https://w.app/yurxv7" target="_blank">Contratar</a>
+          </div>
+          <div class="service-details">
+            <p>Ofereço trabalhos como:
+            Vizualizer 2D, Vizualizer 3D, Tipografia etc.</p>
+          </div>
+        </div>
+
+        <!-- Serviço 2 -->
+        <div class="service-card">
+          <h2><i class="bi bi-mic"></i> Masterização & Mixagem</h2>
+          <p>Adaptar para qualquer dispositivo + mixagem profissional para sua música.</p>
+          <div class="service-buttons">
+            <button class="btn-small" onclick="toggleDetails(this)">Detalhes</button>
+            <a class="btn-small" href="https://w.app/fhdqky" target="_blank">Contratar</a>
+          </div>
+          <div class="service-details">
+            <p>Uso de plugins premium para entregar um som limpo.</p>
+          </div>
+        </div>
+
+        <!-- Serviço 3 -->
+        <div class="service-card">
+          <h2><i class="bi bi-brush"></i> Artes Visuais</h2>
+          <p>Capas de álbuns, banners e identidade visual personalizada.</p>
+          <div class="service-buttons">
+            <button class="btn-small" onclick="toggleDetails(this)">Detalhes</button>
+            <a class="btn-small" href="https://w.app/z2qrgv" target="_blank">Contratar</a>
+          </div>
+          <div class="service-details">
+            <p>Como Designer com experiencia, Trabalho com:
+                <br>
+                  <br>- Logotipos
+                  <br>- Banners
+                  <br>- Thumbnaills
+                  <br>- Capa/Album
+                  <br>- Artes 2D
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <a class="btn" href="index.html">
+        <span class="icon"><i class="bi bi-arrow-left"></i></span>
+        <span class="text">Voltar</span>
+      </a>
+    </section>
+  </main>
+
+  <script>
+    function toggleDetails(button) {
+      const details = button.parentElement.nextElementSibling;
+      details.classList.toggle("active");
+      button.textContent = details.classList.contains("active") ? "Fechar" : "Detalhes";
+    }
+  </script>
+  <footer>
+  <p>&copy; 2025 Pablo Santana. Todos os direitos reservados.</p>
+</footer>
+
+<script src="transition.js"></script>
+
+</body>
+</html>
